@@ -1,7 +1,6 @@
 
 const API_URL = "https://countries.dev/alpha/";
 const countryCodes = ["JP", "IN", "FR", "BR", "CA", "IT", "AU", "DE"];
-
 const gameBoard = document.querySelector("#game-board");
 const player1ScoreElement = document.querySelector("#score1");
 const player2ScoreElement = document.querySelector("#score2");
@@ -128,6 +127,7 @@ function handleMatch() {
 
     scores[currentPlayer - 1]++;
     matchedPairs++;
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
 
     updateScoreboard();
     resetSelection();
